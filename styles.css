@@ -1,141 +1,142 @@
 /* Global Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
 }
 
-/* Header and Navigation Bar */
+/* Header Section */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #333;
+  padding: 10px;
+  width: 100%;
 }
 
+/* Container for search bar and logo */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+}
+
+/* Search Bar Styles */
+.search-bar {
+  flex: 1;
+}
+
+.search-bar input {
+  padding: 12px;
+  width: 300px; /* Bigger search bar */
+  border: none;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.search-bar button {
+  padding: 12px 18px;
+  background-color: #f4a261;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.search-bar button:hover {
+  background-color: #e76f51;
+}
+
+/* Logo */
 .logo img {
-    width: 150px;
+  width: 150px;
+}
+
+/* Main Navigation Bar */
+.main-navigation {
+  width: 100%;
+  background-color: #444;
+  text-align: left; /* Aligning navigation to the left */
 }
 
 .nav-links {
-    list-style-type: none;
+  list-style-type: none;
+  padding: 10px;
 }
 
 .nav-links li {
-    display: inline-block;
-    position: relative;
+  display: inline-block;
+  position: relative;
 }
 
 .nav-links li a {
-    color: white;
-    text-decoration: none;
-    padding: 15px;
-    display: block;
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+  display: inline-block;
 }
 
 .nav-links li a:hover {
-    background-color: #555;
+  background-color: #555;
 }
 
 /* Dropdown Menu */
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+  display: block;
+}
+
+.dropdown-content a:hover .sub-dropdown-content {
+  display: block;
 }
 
 .dropdown:hover .dropbtn {
-    background-color: #555;
-}
-
-/* Search Bar */
-.search-bar {
-    display: flex;
-    align-items: center;
-}
-
-.search-bar input {
-    padding: 8px;
-    border: none;
-    border-radius: 4px;
-    margin-right: 10px;
-}
-
-.search-bar button {
-    padding: 8px 12px;
-    background-color: #f4a261;
-    border: none;
-    color: white;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-.search-bar button:hover {
-    background-color: #e76f51;
+  background-color: #555;
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: white;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 
 /* Mobile Responsive Design */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    .nav-links {
-        width: 100%;
-        text-align: left;
-    }
+  .search-bar input {
+    width: 100%; /* Full width for mobile */
+  }
 
-    .nav-links li {
-        display: block;
-        width: 100%;
-    }
+  .search-bar button {
+    width: 100%;
+  }
 
-    .search-bar {
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .search-bar input {
-        width: 80%;
-    }
-
-    .search-bar button {
-        width: 20%;
-    }
+  .nav-links li {
+    display: block;
+  }
 }
