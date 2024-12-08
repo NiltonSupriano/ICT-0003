@@ -20,23 +20,21 @@ header {
   width: 100%;
 }
 
-/* Container for search bar and logo */
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 10px;
+.logo img {
+  width: 150px;
 }
 
 /* Search Bar Styles */
 .search-bar {
-  flex: 1;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .search-bar input {
   padding: 12px;
-  width: 300px; /* Bigger search bar */
+  width: 300px;
   border: none;
   border-radius: 4px;
   margin-right: 10px;
@@ -55,33 +53,24 @@ header {
   background-color: #e76f51;
 }
 
-/* Logo */
-.logo img {
-  width: 150px;
-}
-
-/* Main Navigation Bar */
-.main-navigation {
-  width: 100%;
-  background-color: #444;
-  text-align: left; /* Aligning navigation to the left */
-}
-
+/* Navigation Styles */
 .nav-links {
   list-style-type: none;
-  padding: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .nav-links li {
-  display: inline-block;
   position: relative;
+  margin: 0 10px;
 }
 
 .nav-links li a {
   color: white;
   text-decoration: none;
   padding: 15px;
-  display: inline-block;
+  background-color: #444;
+  border-radius: 4px;
 }
 
 .nav-links li a:hover {
@@ -102,12 +91,33 @@ header {
   display: block;
 }
 
-.dropdown-content a:hover .sub-dropdown-content {
+.dropdown-content a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
   display: block;
 }
 
-.dropdown:hover .dropbtn {
-  background-color: #555;
+.dropdown-content a:hover {
+  background-color: #444;
+}
+
+/* Layout Styles */
+.container {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  margin: 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 100%;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* Footer */
@@ -116,27 +126,5 @@ footer {
   padding: 20px;
   background-color: #666666;
   color: white;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-}
-
-/* Mobile Responsive Design */
-@media (max-width: 768px) {
-  .header-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .search-bar input {
-    width: 100%; /* Full width for mobile */
-  }
-
-  .search-bar button {
-    width: 100%;
-  }
-
-  .nav-links li {
-    display: block;
-  }
+  position: relative;
 }
