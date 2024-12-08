@@ -8,6 +8,7 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #ffffff;
+  color: #333;
   margin-bottom: 50px;
 }
 
@@ -19,13 +20,23 @@ header {
   background-color: #666666;
   padding: 20px;
   width: 100%;
+  text-align: center;
 }
 
 .logo img {
   width: 150px;
 }
 
-/* Search Bar Styles */
+.subpage-header img {
+  width: 150px;
+}
+
+.logo h2 {
+  color: white;
+  margin-top: 10px;
+}
+
+/* Search Bar Styles (if present on some pages) */
 .search-bar {
   margin: 10px 0;
   display: flex;
@@ -59,12 +70,12 @@ header {
   list-style-type: none;
   display: flex;
   justify-content: center;
+  margin-top: 20px;
 }
 
 .nav-links li {
   position: relative;
   margin: 0 10px;
-  margin-top: 20px;
 }
 
 .nav-links li a {
@@ -73,6 +84,7 @@ header {
   padding: 15px;
   background-color: #444;
   border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
 .nav-links li a:hover {
@@ -104,22 +116,57 @@ header {
   background-color: #444;
 }
 
-/* Layout Styles */
+/* Main Content and Aside */
 .container {
   display: grid;
   grid-template-columns: 80% 20%;
-  margin: 20px;
+  gap: 20px;
+  padding: 20px;
 }
 
-@media (max-width: 768px) {
-  .container {
-    grid-template-columns: 100%;
-  }
+main {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-  .nav-links {
-    flex-direction: column;
-    align-items: center;
-  }
+main h1 {
+  margin-bottom: 20px;
+}
+
+main p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+aside {
+  padding: 20px;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+aside h2 {
+  margin-bottom: 15px;
+  color: #444;
+}
+
+aside ul {
+  list-style-type: none;
+}
+
+aside ul li {
+  margin-bottom: 10px;
+}
+
+aside ul li a {
+  color: #444;
+  text-decoration: none;
+}
+
+aside ul li a:hover {
+  text-decoration: underline;
 }
 
 /* Footer */
@@ -133,4 +180,36 @@ footer {
   left: 0px;
   right: 0px;
   margin-bottom: 0px;
+  font-size: 14px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header {
+    padding: 15px;
+  }
+
+  main,
+  aside {
+    margin-bottom: 20px;
+  }
 }
